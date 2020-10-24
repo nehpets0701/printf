@@ -1,30 +1,4 @@
 #include "holberton.h"
-/**
- *_printf - the function prints a formated string to the standard output
- *@format: the formated string to be output
- *Return: will return the amount of characters printed by the function
- */
-int _printf(const char *format, ...)
-{
-	int i = 0;
-	int char_count = 0;
-	va_list cases;
-
-	va_start(cases, format);
-	while (format[i] != '\0')
-	{
-		switch (format[i])
-		{
-		case '%':
-			char_count += casePercent(format[i + 1]);
-		case '\\':
-			char_count += caseSlash(format[i + 1]);
-		}
-		_putchar(format[i]);
-		char_count++;
-	}
-	return (char_count);
-}
 
 /**
  *caseSlash-handles the character after a '\'
@@ -85,6 +59,33 @@ int casePercent(char c)
 		i++;
 		char_count++;
 		break;
+	}
+	return (char_count);
+}
+
+/**
+ *_printf - the function prints a formated string to the standard output
+ *@format: the formated string to be output
+ *Return: will return the amount of characters printed by the function
+ */
+int _printf(const char *format, ...)
+{
+	int i = 0;
+	int char_count = 0;
+	va_list cases;
+
+	va_start(cases, format);
+	while (format[i] != '\0')
+	{
+		switch (format[i])
+		{
+		case '%':
+			char_count += casePercent(format[i + 1]);
+		case '\\':
+			char_count += caseSlash(format[i + 1]);
+		}
+		_putchar(format[i]);
+		char_count++;
 	}
 	return (char_count);
 }
