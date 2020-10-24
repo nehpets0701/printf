@@ -13,17 +13,14 @@ int caseSlash(char c)
 	{
 	case '\\':
 		_putchar('\\');
-		i++;
 		char_count++;
 		break;
 	case 'n':
 		_putchar('\n');
-		i++;
 		char_count++;
 		break;
 	case 't':
 		_putchar('\t');
-		i++;
 		char_count++;
 		break;
 	}
@@ -43,20 +40,16 @@ int casePercent(char c)
 	{
 	case 'c':
 		_putchar(va_arg(cases, char));
-		i++;
 		char_count++;
 		break;
 	case 's':
 		char_count += print_string(va_arg(cases, char*));
-		i++;
 		break;
 	case 'd': case 'i':
 		char_count += print_int(va_arg(cases, int));
-		i++;
 		break;
 	case '%':
 		_putchar('%');
-		i++;
 		char_count++;
 		break;
 	}
@@ -81,11 +74,16 @@ int _printf(const char *format, ...)
 		{
 		case '%':
 			char_count += casePercent(format[i + 1]);
+			i++;
+			break;
 		case '\\':
 			char_count += caseSlash(format[i + 1]);
+			i++;
+			break;
 		}
 		_putchar(format[i]);
 		char_count++;
+		i++;
 	}
 	return (char_count);
 }
