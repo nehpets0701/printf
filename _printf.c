@@ -2,7 +2,7 @@
 #include <stdarg.h>
 
 /**
- *caseSlash-handles the character after a '\'
+ *caseSlash-handles the character after '\'
  *Return:number of characters printed
  *@c:character after '\'
  */
