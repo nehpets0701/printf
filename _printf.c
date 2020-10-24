@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdarg.h>
 
 /**
  *caseSlash-handles the character after a '\'
@@ -85,5 +86,6 @@ int _printf(const char *format, ...)
 		char_count++;
 		i++;
 	}
+	va_end(cases);
 	return (char_count);
 }
