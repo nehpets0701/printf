@@ -11,11 +11,13 @@ int main(void)
 {
 	int len;
 	int len2;
-	int decimal = 34620;
+	unsigned int decimal = 34620;
+	unsigned int hexa = /*7562*/ 2147484671;
 	int binleng;
+	int binhex;
 
 	binleng = _printf("%b\n", decimal);
-
+	binhex = _printf("%x\n", hexa);
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("let's try to printf a simple sentence.\n");
 
@@ -26,5 +28,8 @@ int main(void)
 
 	_printf("decimal number %d in binary is %b\n", decimal, decimal);
 	_printf("prints how many characters printed by %%b: %d\n", binleng);
+
+	_printf("decimal number %d in hexa is %x\n", hexa, hexa);
+	_printf("prints how mant characters printed by %%x: %d\n", binhex);
 	return (0);
 }
