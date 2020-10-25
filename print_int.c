@@ -25,7 +25,13 @@ int print_int(int num)
 		_putchar('-');
 		num = num * -1;
 	}
-	print_rec(num);
+	if (num == 10)
+	{
+		_putchar('1');
+		_putchar('0');
+	}
+	else
+		print_rec(num);
 	while (num > 10)
 	{
 		num /= 10;
