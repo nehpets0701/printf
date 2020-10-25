@@ -4,7 +4,7 @@
 /**
  *caseSlash-handles the character after '\'
  *Return:number of characters printed
- *@c:character after '\'
+ *@flag: the flag character used to format the output
  */
 int caseSlash(char flag)
 {
@@ -31,7 +31,8 @@ int caseSlash(char flag)
 /**
  *casePercent-handles the character after a '%'
  *Return:number of characters printed
- *@c:character after '%'
+ *@flag: the flag character used to format the output
+ *@cases: the va_list passed to the function where our variables are located
  */
 int casePercent(char flag, va_list cases)
 {
