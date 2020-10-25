@@ -21,8 +21,10 @@ int print_int(int num)
 	int count = 1;
 
 	if (num < 0)
+	{
 		_putchar('-');
-
+		num = num * -1;
+	}
 	print_rec(num);
 	while (num > 10)
 	{
