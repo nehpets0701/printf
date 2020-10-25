@@ -6,6 +6,13 @@
  */
 int print_string(char *str)
 {
-        /*keeps track of how many characters are being printed*/
-        int num_char = 0;
+	int num_char = 0;
+	int i = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+		num_char++;
+	}
+	return (num_char);
 }
