@@ -6,11 +6,11 @@
  *Return:number of characters printed
  *@c:character after '\'
  */
-int caseSlash(char c)
+int caseSlash(char flag)
 {
 	int char_count = 0;
 
-	switch (c)
+	switch (flag)
 	{
 	case '\\':
 		_putchar('\\');
@@ -33,14 +33,14 @@ int caseSlash(char c)
  *Return:number of characters printed
  *@c:character after '%'
  */
-int casePercent(char c)
+int casePercent(char flag, va_list cases)
 {
 	int char_count = 0;
 
-	switch (c)
+	switch (flag)
 	{
 	case 'c':
-		_putchar(va_arg(cases, char));
+		_putchar(va_arg(cases, int));
 		char_count++;
 		break;
 	case 's':
@@ -61,6 +61,7 @@ int casePercent(char c)
  *_printf - the function prints a formated string to the standard output
  *@format: the formated string to be output
  *Return: will return the amount of characters printed by the function
+ *or a negative upon failure
  */
 int _printf(const char *format, ...)
 {
@@ -74,8 +75,8 @@ int _printf(const char *format, ...)
 		switch (format[i])
 		{
 		case '%':
-			char_count += casePercent(format[i + 1]);
-			i++;
+			char_count += casePercent(format[i + 1], cases);
+			i = i + 2;
 			break;
 		case '\\':
 			char_count += caseSlash(format[i + 1]);
