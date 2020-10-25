@@ -50,6 +50,9 @@ int casePercent(char flag, va_list cases)
 	case 'd': case 'i':
 		char_count += print_int(va_arg(cases, int));
 		break;
+	case 'b':
+		char_count += print_binary(va_arg(cases, unsigned int));
+		break;
 	case '%':
 		_putchar('%');
 		char_count++;

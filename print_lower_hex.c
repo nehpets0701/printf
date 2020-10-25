@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- *print_hex-prints unsigned decimal value as hexadecimal
- *Return: the number of characters printed
+ *print_lower_hex-prints lowercase hex value
+ *Return: number of printed chars
  *@num:unsigned decimal input
  */
-int print_hex(unsigned int num)
+int print_lower_hex(unsigned int num)
 {
 	int char_count = 0;
 	int i = 0;
@@ -24,7 +24,7 @@ int print_hex(unsigned int num)
 		}
 		else
 		{
-			hexNum[i] = temp + 55;
+			hexNum[i] = temp + 87;
 			i++;
 		}
 		num = num / 16;
