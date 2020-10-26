@@ -95,5 +95,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(cases);
-	return (char_count);
+	return (char_count - 1);
 }
