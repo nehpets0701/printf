@@ -73,17 +73,9 @@ int casePercent(char flag, va_list cases)
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, char_count = 0, length = 0;
+	int i = 0, char_count = 0;
 	va_list cases;
 
-	while (format[i] != '\0')
-	{
-		length++;
-		i++;
-	}
-	i = 0;
-	if (length == 0)
-		exit (1);
 	va_start(cases, format);
 	while (format[i] != '\0')
 	{
