@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdarg.h>
+#include <stdlib.h>
 
 /**
  *caseSlash-handles the character after '\'
@@ -82,7 +83,7 @@ int _printf(const char *format, ...)
 	}
 	i = 0;
 	if (length == 0)
-		return (-1);
+		exit(1);
 	va_start(cases, format);
 	while (format[i] != '\0')
 	{
