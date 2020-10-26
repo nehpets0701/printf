@@ -19,5 +19,15 @@ int print_string(char *str)
 			num_char++;
 		}
 	}
+	else
+	{
+		_putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+		num_char += 6;
+	}
 	return (num_char);
 }

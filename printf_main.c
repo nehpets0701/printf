@@ -15,6 +15,7 @@ int main(void)
 	unsigned int hexa = /*7562*/ 2147484671;
 	int binleng;
 	int binhex;
+	int nullCount = 0;
 
 	binleng = _printf("%b\n", decimal);
 	binhex = _printf("%x\n", hexa);
@@ -31,5 +32,10 @@ int main(void)
 
 	_printf("decimal number %d in hexa is %x\n", hexa, hexa);
 	_printf("prints how mant characters printed by %%x: %d\n", binhex);
+
+	/*mitch tests*/
+	_printf("%s\n", "sentence");
+	nullCount = _printf("%s\n", (char *)0);
+	_printf("%d\n", nullCount);
 	return (0);
 }
