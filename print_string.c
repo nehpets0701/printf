@@ -10,13 +10,10 @@ int print_string(char *str)
 	int num_char = 0;
 	int i = 0;
 
-	if (str == NULL)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (i = 0; str[i] != '\0'; i++)
-		{
-			_putchar(str[i]);
-			num_char++;
-		}
+		_putchar(str[i]);
+		num_char++;
 	}
 	return (num_char);
 }
