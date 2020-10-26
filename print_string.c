@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+
 /**
  *print_string - this function prints a string to the standard output
  *@str: The string to be output
@@ -9,10 +10,24 @@ int print_string(char *str)
 {
 	int num_char = 0;
 	int i = 0;
-	for (i = 0; str[i] != '\0'; i++)
+
+	if (str != NULL)
 	{
-		_putchar(str[i]);
-		num_char++;
+		for (i = 0; str[i] != '\0'; i++)
+		{
+			_putchar(str[i]);
+			num_char++;
+		}
+	}
+	else
+	{
+		_putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+		num_char += 6;
 	}
 	return (num_char);
 }
