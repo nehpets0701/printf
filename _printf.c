@@ -76,7 +76,7 @@ int _printf(const char *format, ...)
 	int i = 0, char_count = 0;
 	va_list cases;
 
-	if (*format == NULL)
+	if (format == NULL)
 		return (-1);
 	va_start(cases, format);
 	while (format[i] != '\0')
