@@ -82,7 +82,7 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	i = 0;
-	if (length == 0)
+	if (length == 0 || cases == NULL)
 		exit(1);
 	va_start(cases, format);
 	while (format[i] != '\0')
