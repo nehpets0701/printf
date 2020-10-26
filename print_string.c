@@ -8,8 +8,15 @@
 int print_string(char *str)
 {
 	int num_char = 0;
-	int i = 0;
+	int i = 0, j = 0;
 
+	while (str[i] != '\0')
+	{
+		length ++;
+		j++;
+	}
+	if (length == 0)
+		return (0);
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		_putchar(str[i]);
