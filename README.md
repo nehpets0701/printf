@@ -1,8 +1,8 @@
-Name: _printf
+## Name: _printf
 
-Description: Used to print a format string with given conversion characters to input variables and escape characters tomake other changes to the string.
+## Description: Used to print a format string with given conversion characters to input variables and escape characters tomake other changes to the string.
 
-Usage: _printf("format", arguments);
+## Usage: _printf("format", arguments);
 
 Conversion Characters:
 %c-character
@@ -22,7 +22,7 @@ Escape Characters:
 \t-prints a horizontal tab
 \b-puts a backspace
 
-Examples:
+## Examples:
 _printf("Hello"); -> Hello
 _printf("Number: %d", 5); -> Number: 5
 _printf("%s", "string"); -> string
