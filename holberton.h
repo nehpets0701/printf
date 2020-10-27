@@ -6,6 +6,9 @@ int print_int(int num);
 int print_string(char *str);
 int print_binary(unsigned int num);
 int print_hexa(unsigned int num);
+int print_hexa_upper(unsigned int num);
+int print_octal(unsigned int num);
+int print_unsigned(int num);
 /*printf prototype*/
 int _printf(const char *format, ...);
 #endif
