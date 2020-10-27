@@ -9,10 +9,12 @@ _printf %[parameter][flags][width][.precision][length]type
 .SH DESCRIPTION
 _printf prints the input string "format" with certain flags, conversions, and modifiers
 .SH OPTIONS
-%d and %i: prints an integer, %s: prints a string, %c: prints a character, %b: prints number in binary, %x: prints number as lowercase hexidecimal, %X: prints number as uppercase hexidecimal
+%d and %i: prints an integer, %s: prints a string, %c: prints a character, %b: prints number in binary, %x: prints number as lowercase hexidecimal, %X: prints number as uppercase hexidecimal, %o: prints numbers as octal, %u: prints unsigned integer
+
+\\n: prints a new line, \\t: prints a horizontal tab, \\b: puts a backslash
 .SH SEE ALSO
 printf(3)
 .SH BUGS
-plenty at the moment
+no known issues besides checker
 .SH AUTHORS
 Stephen Schwartz and Manny Figueroa
