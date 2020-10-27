@@ -29,6 +29,8 @@ int caseSlash(char flag)
 		_putchar('\b');
 		char_count++;
 		break;
+	default:
+		exit(-1);
 	}
 	return (char_count);
 }
