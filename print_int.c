@@ -32,6 +32,7 @@ int print_int(int num)
 	}
 	else
 		print_rec(num);
+
 	while (num > 10)
 	{
 		num /= 10;

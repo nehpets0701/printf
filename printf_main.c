@@ -12,6 +12,7 @@ int main(void)
         /*char *test = "cool";*/
         int len;
         int len2;
+	int len3;
         unsigned int decimal = 34620;
         unsigned int hexa = /*7562*/ 2147484671;
         int binleng;
@@ -46,5 +47,9 @@ int main(void)
 
 	_printf("%c", "c");
 	/*_printf("%s", 'c');*/
+
+	/*d and i tests */
+	len3 = _printf("%d, %i\n", -10, -20);
+	_printf("%d", len3);
         return (0);
 }
