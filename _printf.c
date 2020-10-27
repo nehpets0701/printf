@@ -86,7 +86,6 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || format[0] == '\0')
 		return (-1);
-
 	va_start(cases, format);
 	while (format[i] != '\0')
 	{
