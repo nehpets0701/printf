@@ -1,9 +1,9 @@
 #include "holberton.h"
 #include <stdarg.h>
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
- *caseSlash-handles the character after '\'
+ *caseSlash - handles the character after '\'
  *Return:number of characters printed
  *@flag: the flag character used to format the output
  */
@@ -23,6 +23,10 @@ int caseSlash(char flag)
 		break;
 	case 't':
 		_putchar('\t');
+		char_count++;
+		break;
+	case 'b':
+		_putchar('\b');
 		char_count++;
 		break;
 	}
@@ -78,6 +82,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
+
 	va_start(cases, format);
 	while (format[i] != '\0')
 	{
@@ -85,16 +90,19 @@ int _printf(const char *format, ...)
 		{
 		case '%':
 			char_count += casePercent(format[i + 1], cases);
-			i = i + 2;
+		        i = i + 2;
 			break;
 		case '\\':
 			char_count += caseSlash(format[i + 1]);
 			i++;
 			break;
 		}
-		_putchar(format[i]);
-		char_count++;
-		i++;
+		if (format[i] != '\0')
+		{
+			_putchar(format[i]);
+			char_count++;
+			i++;
+		}
 	}
 	va_end(cases);
 	return (char_count);

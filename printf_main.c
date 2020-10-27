@@ -16,6 +16,7 @@ int main(void)
 	int binleng;
 	int binhex;
 	int nullCount = 0;
+	int mitch = 0;
 
 	binleng = _printf("%b\n", decimal);
 	binhex = _printf("%x\n", hexa);
@@ -37,5 +38,9 @@ int main(void)
 	_printf("%s\n", "sentence");
 	nullCount = _printf("%s\n", (char *)0);
 	_printf("%d\n", nullCount);
+
+	_printf("%%\n");
+	mitch = _printf("why%c", '\n');
+	_printf("This is the count for new line check %d\n", mitch);
 	return (0);
 }
