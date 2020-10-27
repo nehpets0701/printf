@@ -84,7 +84,7 @@ int _printf(const char *format, ...)
 	int i = 0, char_count = 0;
 	va_list cases;
 
-	if (format == NULL)
+	if (format == NULL || format[0] == '\0')
 		return (-1);
 
 	va_start(cases, format);
@@ -100,12 +100,13 @@ int _printf(const char *format, ...)
 			char_count += caseSlash(format[i + 1]);
 			i++;
 			break;
-		}
-		if (format[i] != '\0')
-		{
-			_putchar(format[i]);
-			char_count++;
-			i++;
+		default:
+			if (format[i] != '\0')
+			{
+				_putchar(format[i]);
+				char_count++;
+				i++;
+			}
 		}
 	}
 	va_end(cases);
