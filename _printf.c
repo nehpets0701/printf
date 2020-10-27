@@ -70,7 +70,7 @@ int casePercent(char flag, va_list cases)
 		char_count += print_octal(va_arg(cases, unsigned int));
 		break;
 	case 'u':
-		char_count += print_unsigned(va_arg(cases, int));
+		char_count += print_unsign(va_arg(cases, unsigned int));
 		break;
 	case '%':
 		_putchar('%');
