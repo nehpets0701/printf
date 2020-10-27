@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
  *print_string - this function prints a string to the standard output
  *@str: The string to be output
