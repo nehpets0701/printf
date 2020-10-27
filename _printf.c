@@ -93,9 +93,6 @@ int _printf(const char *format, ...)
 	int i = 0, char_count = 0;
 	va_list cases;
 
-	if (!format)
-		exit(-1);
-
 	if (format == NULL || format[0] == '\0')
 		return (-1);
 	va_start(cases, format);
