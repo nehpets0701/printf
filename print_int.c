@@ -20,8 +20,6 @@ int print_int(int num)
 {
 	int count = 1;
 
-	if (num != NULL)
-	{
 		if (num < 0)
 		{
 			_putchar('-');
@@ -39,8 +37,5 @@ int print_int(int num)
 			num /= 10;
 			count++;
 		}
-	}
-	else
-		return (-1);
 	return (count);
 }
