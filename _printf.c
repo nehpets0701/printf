@@ -63,6 +63,15 @@ int casePercent(char flag, va_list cases)
 	case 'x':
 		char_count += print_hexa(va_arg(cases, unsigned int));
 		break;
+	case 'X':
+		char_count += print_hexa_upper(va_arg(cases, unsigned int));
+		break;
+	case 'o':
+		char_count += print_octal(va_arg(cases, unsigned int));
+		break;
+	case 'u':
+		char_count += print_unsigned(va_arg(cases, int));
+		break;
 	case '%':
 		_putchar('%');
 		char_count++;
@@ -93,7 +102,7 @@ int _printf(const char *format, ...)
 		{
 		case '%':
 			char_count += casePercent(format[i + 1], cases);
-		        i = i + 2;
+			i = i + 2;
 			break;
 		case '\\':
 			char_count += caseSlash(format[i + 1]);
