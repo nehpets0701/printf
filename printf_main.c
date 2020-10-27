@@ -42,5 +42,7 @@ int main(void)
 	_printf("%%\n");
 	mitch = _printf("why%c", '\n');
 	_printf("This is the count for new line check %d\n", mitch);
+
+	_printf("%K\n");
 	return (0);
 }
