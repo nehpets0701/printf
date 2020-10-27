@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-        char *test = "cool";
+        /*char *test = "cool";*/
         int len;
         int len2;
         unsigned int decimal = 34620;
@@ -44,6 +44,7 @@ int main(void)
         mitch = _printf("why%c", '\n');
         _printf("This is the count for new line check %d\n", mitch);
 
-        _printf(test);
+	_printf("%c", "c");
+	/*_printf("%s", 'c');*/
         return (0);
 }
