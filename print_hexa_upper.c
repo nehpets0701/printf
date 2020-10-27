@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
- *printing - prints the hexadecimal number
+ *printing_upper - prints the hexadecimal number
  *@char_count: The amount of chars to print
  *@hex: the hexadecimal string
  */
@@ -14,7 +14,7 @@ void printing_upper(char *hex, int char_count)
 		_putchar(hex[i]);
 }
 /**
- *length - finds the length of the final output / allocation space
+ *length_upper - finds the length of the final output / allocation space
  *@num: the number given to be converted
  *Return: how many characters printed out
  */
@@ -30,7 +30,7 @@ int length_upper(unsigned int num)
 	return (char_count);
 }
 /**
- *print_hexa - prints out a given decimal number as a hexadecimal number
+ *print_hexa_upper - prints out a given decimal number as a hexadecimal number
  *@num: the number to be converted
  *Return: how many characters printed out
  */

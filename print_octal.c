@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *find_length - finds how many characters a are printed out/length of octal #
+ *find_length_octal - finds how many characters a are printed out/length of
+ *octal #
  *@num: the number to be proccessed
  *Return: returns how many characters
  */
@@ -18,7 +19,7 @@ while (num > 1)
 return (char_count);
 }
 /**
- *print_binary - this function takes a decimal number and print it in octal
+ *print_octal - this function takes a decimal number and print it in octal
  *@num: The number to be converted
  *Return: returns the amount of characters printed
  */

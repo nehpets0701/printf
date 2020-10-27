@@ -8,7 +8,7 @@ int print_binary(unsigned int num);
 int print_hexa(unsigned int num);
 int print_hexa_upper(unsigned int num);
 int print_octal(unsigned int num);
-int print_unsigned(int num);
+int print_unsign(unsigned int num);
 /*printf prototype*/
 int _printf(const char *format, ...);
 #endif
