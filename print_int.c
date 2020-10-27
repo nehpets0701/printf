@@ -20,22 +20,27 @@ int print_int(int num)
 {
 	int count = 1;
 
-	if (num < 0)
+	if (num != NULL)
 	{
-		_putchar('-');
-		num = num * -1;
-	}
-	if (num == 10)
-	{
-		_putchar('1');
-		_putchar('0');
+		if (num < 0)
+		{
+			_putchar('-');
+			num = num * -1;
+		}
+		if (num == 10)
+		{
+			_putchar('1');
+			_putchar('0');
+		}
+		else
+			print_rec(num);
+		while (num > 10)
+		{
+			num /= 10;
+			count++;
+		}
 	}
 	else
-		print_rec(num);
-	while (num > 10)
-	{
-		num /= 10;
-		count++;
-	}
+		return (-1);
 	return (count);
 }
