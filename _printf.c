@@ -94,7 +94,7 @@ int _printf(const char *format, ...)
 		{
 		case '%':
 			char_count += casePercent(format[i + 1], cases);
-		        i = i + 2;
+			i = i + 2;
 			break;
 		case '\\':
 			char_count += caseSlash(format[i + 1]);
