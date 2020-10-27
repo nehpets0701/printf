@@ -65,6 +65,8 @@ int casePercent(char flag, va_list cases)
 		_putchar('%');
 		char_count++;
 		break;
+	default:
+		exit(-1);
 	}
 	return (char_count);
 }
