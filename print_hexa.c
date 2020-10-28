@@ -6,7 +6,7 @@
  *@char_count: The amount of chars to print
  *@hex: the hexadecimal string
  */
-void printing_hexa(char *hex, int char_count)
+void printing(char *hex, int char_count)
 {
 	int i = 0;
 
@@ -73,7 +73,7 @@ int print_hexa(unsigned int num)
 		}
 		i++;
 	}
-	printing_hexa(hex, char_count);
+	printing(hex, char_count);
 	free(hex);
 	return (char_count);
 }

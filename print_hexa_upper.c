@@ -18,7 +18,7 @@ void printing_upper(char *hex, int char_count)
  *@num: the number given to be converted
  *Return: how many characters printed out
  */
-int length_upper_hex(unsigned int num)
+int length_upper(unsigned int num)
 {
 	int char_count = 0;
 
@@ -39,7 +39,7 @@ int print_hexa_upper(unsigned int num)
 	int quo = 0, i = 0, char_count = 0;
 	char *hex;
 
-	char_count = length_upper_hex(num);
+	char_count = length_upper(num);
 	hex = malloc(sizeof(char) * char_count);
 	if (hex == NULL)
 		return (-1);
