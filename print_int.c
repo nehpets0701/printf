@@ -6,7 +6,7 @@
  */
 void print_rec(int num)
 {
-	if (num > 10)
+	if (num >= 10)
 	{
 		print_rec(num / 10);
 	}
@@ -38,7 +38,7 @@ int print_int(int num)
 		else
 		{
 			print_rec(num);
-			while (num > 10)
+			while (num >= 10)
 			{
 				num /= 10;
 				count++;
