@@ -77,7 +77,7 @@ int casePercent(char flag, va_list cases)
 		char_count++;
 		break;
 	default:
-		exit(-1);
+		return (-3);
 	}
 	return (char_count);
 }
@@ -90,19 +90,33 @@ int casePercent(char flag, va_list cases)
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, char_count = 0;
+	int i = 0, char_count = 0, check = 0;
 	va_list cases;
 
 	if (format == NULL || format[0] == '\0')
 		return (-1);
+
+	if (format[0] == '%' && format[1] == '%')
+		return (-1);
+
 	va_start(cases, format);
 	while (format[i] != '\0')
 	{
 		switch (format[i])
 		{
 		case '%':
-			char_count += casePercent(format[i + 1], cases);
-			i = i + 2;
+			check = casePercent(format[i + 1], cases);
+			if (check == -3)
+			{
+				_putchar('%');
+				char_count++;
+				i++;
+			}
+			else
+			{
+				char_count += check;
+				i = i + 2;
+			}
 			break;
 		case '\\':
 			char_count += caseSlash(format[i + 1]);
