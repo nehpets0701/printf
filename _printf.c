@@ -35,13 +35,65 @@ int caseSlash(char flag)
 	return (char_count);
 }
 
+int caseLong(char second, va_list cases)
+{
+	int char_count = 0;
+
+	switch (second)
+	{
+	case 'd': case 'i':
+		char_count += print_long_int(va_arg(cases, long int));
+		break;
+	case 'u':
+		char_count += print_unsigned_long(va_arg(cases, unsigned long int));
+		break;
+	case 'o':
+		char_count += print_long_octal(va_arg(cases, unsigned long int));
+		break;
+	case 'x':
+		char_count += long_lower_hex(va_arg(cases, unsigned long int));
+		break;
+	case 'X':
+		char_count += long_upper_hex(va_arg(cases, unsigned long int));
+		break;
+	}
+
+	return (char_count);
+}
+
+int caseShort(char second, va_list cases)
+{
+	int char_count = 0;
+
+	switch (second)
+	{
+	case 'd': case 'i':
+		char_count += print_short_int(va_arg(cases, int));
+		break;
+	case 'u':
+		char_count += print_unsigned_short(va_arg(cases, int));
+		break;
+	case 'o':
+		char_count += print_short_octal(va_arg(cases, int));
+		break;
+	case 'x':
+		char_count += short_lower_hex(va_arg(cases, int));
+		break;
+	case 'X':
+		char_count += short_upper_hex(va_arg(cases, int));
+		break;
+	}
+
+	return (char_count);
+}
+
 /**
  *casePercent-handles the character after a '%'
  *Return:number of characters printed
  *@flag: the flag character used to format the output
  *@cases: the va_list passed to the function where our variables are located
  */
-int casePercent(char flag, va_list cases)
+int casePercent(char flag, char second, va_list cases)
 {
 	int char_count = 0;
 
@@ -72,6 +124,12 @@ int casePercent(char flag, va_list cases)
 	case 'u':
 		char_count += print_unsign(va_arg(cases, unsigned int));
 		break;
+	case 'l':
+		char_count += caseLong(second, cases);
+		break;
+	case 'h':
+		char_count += caseShort(second, cases);
+		break;
 	case '%':
 		_putchar('%');
 		char_count++;
@@ -101,7 +159,7 @@ int _printf(const char *format, ...)
 		switch (format[i])
 		{
 		case '%':
-			char_count += casePercent(format[i + 1], cases);
+			char_count += casePercent(format[i + 1], format[i + 2], cases);
 			i = i + 2;
 			break;
 		case '\\':

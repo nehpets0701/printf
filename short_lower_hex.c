@@ -6,7 +6,7 @@
  *@char_count: The amount of chars to print
  *@hex: the hexadecimal string
  */
-void printing_hexa(char *hex, int char_count)
+void printing_lower(char *hex, int char_count)
 {
 	int i = 0;
 
@@ -18,7 +18,7 @@ void printing_hexa(char *hex, int char_count)
  *@num: the number given to be converted
  *Return: how many characters printed out
  */
-int length(unsigned int num)
+int length_short_lower(unsigned int num)
 {
 	int char_count = 0;
 
@@ -34,12 +34,12 @@ int length(unsigned int num)
  *@num: the number to be converted
  *Return: how many characters printed out
  */
-int print_hexa(unsigned int num)
+int short_lower_hex(unsigned short int num)
 {
 	int quo = 0, i = 0, char_count = 0;
 	char *hex;
 
-	char_count = length(num);
+	char_count = length_short_lower(num);
 	hex = malloc(sizeof(char) * char_count);
 	if (hex == NULL)
 		return (-1);
@@ -73,7 +73,7 @@ int print_hexa(unsigned int num)
 		}
 		i++;
 	}
-	printing_hexa(hex, char_count);
+	printing_lower(hex, char_count);
 	free(hex);
 	return (char_count);
 }

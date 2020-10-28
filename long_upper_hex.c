@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
- *printing - prints the hexadecimal number
+ *printing_upper - prints the hexadecimal number
  *@char_count: The amount of chars to print
  *@hex: the hexadecimal string
  */
-void printing_hexa(char *hex, int char_count)
+void printing_hex(char *hex, int char_count)
 {
 	int i = 0;
 
@@ -14,11 +14,11 @@ void printing_hexa(char *hex, int char_count)
 		_putchar(hex[i]);
 }
 /**
- *length - finds the length of the final output / allocation space
+ *length_upper - finds the length of the final output / allocation space
  *@num: the number given to be converted
  *Return: how many characters printed out
  */
-int length(unsigned int num)
+int length_upper(unsigned int num)
 {
 	int char_count = 0;
 
@@ -30,16 +30,16 @@ int length(unsigned int num)
 	return (char_count);
 }
 /**
- *print_hexa - prints out a given decimal number as a hexadecimal number
+ *print_hexa_upper - prints out a given decimal number as a hexadecimal number
  *@num: the number to be converted
  *Return: how many characters printed out
  */
-int print_hexa(unsigned int num)
+int long_upper_hex(unsigned long int num)
 {
 	int quo = 0, i = 0, char_count = 0;
 	char *hex;
 
-	char_count = length(num);
+	char_count = length_upper(num);
 	hex = malloc(sizeof(char) * char_count);
 	if (hex == NULL)
 		return (-1);
@@ -50,22 +50,22 @@ int print_hexa(unsigned int num)
 		switch (quo)
 		{
 		case 10:
-			hex[i] = 'a';
+			hex[i] = 'A';
 			break;
 		case 11:
-			hex[i] = 'b';
+			hex[i] = 'B';
 			break;
 		case 12:
-			hex[i] = 'c';
+			hex[i] = 'C';
 			break;
 		case 13:
-			hex[i] = 'd';
+			hex[i] = 'D';
 			break;
 		case 14:
-			hex[i] = 'e';
+			hex[i] = 'E';
 			break;
 		case 15:
-			hex[i] = 'f';
+			hex[i] = 'F';
 			break;
 		default:
 			hex[i] = '0' + quo;
@@ -73,7 +73,7 @@ int print_hexa(unsigned int num)
 		}
 		i++;
 	}
-	printing_hexa(hex, char_count);
+	printing_hex(hex, char_count);
 	free(hex);
 	return (char_count);
 }

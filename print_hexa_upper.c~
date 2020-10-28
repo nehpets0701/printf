@@ -6,7 +6,7 @@
  *@char_count: The amount of chars to print
  *@hex: the hexadecimal string
  */
-void printing_hexa(char *hex, int char_count)
+void printing_upper(char *hex, int char_count)
 {
 	int i = 0;
 
@@ -18,7 +18,7 @@ void printing_hexa(char *hex, int char_count)
  *@num: the number given to be converted
  *Return: how many characters printed out
  */
-int length(unsigned int num)
+int length_upper(unsigned int num)
 {
 	int char_count = 0;
 
@@ -34,7 +34,7 @@ int length(unsigned int num)
  *@num: the number to be converted
  *Return: how many characters printed out
  */
-int print_hexa(unsigned int num)
+int print_hexa_upper(unsigned int num)
 {
 	int quo = 0, i = 0, char_count = 0;
 	char *hex;
@@ -50,22 +50,22 @@ int print_hexa(unsigned int num)
 		switch (quo)
 		{
 		case 10:
-			hex[i] = 'a';
+			hex[i] = 'A';
 			break;
 		case 11:
-			hex[i] = 'b';
+			hex[i] = 'B';
 			break;
 		case 12:
-			hex[i] = 'c';
+			hex[i] = 'C';
 			break;
 		case 13:
-			hex[i] = 'd';
+			hex[i] = 'D';
 			break;
 		case 14:
-			hex[i] = 'e';
+			hex[i] = 'E';
 			break;
 		case 15:
-			hex[i] = 'f';
+			hex[i] = 'F';
 			break;
 		default:
 			hex[i] = '0' + quo;
@@ -73,7 +73,7 @@ int print_hexa(unsigned int num)
 		}
 		i++;
 	}
-	printing_hexa(hex, char_count);
+	printing_upper(hex, char_count);
 	free(hex);
 	return (char_count);
 }
